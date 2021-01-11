@@ -18,6 +18,12 @@ app.get("/", function(request, response) {
   // response.sendFile(__dirname + "/views/working.html");
 });
 
+app.get("/home", function(request, response) {
+  response.sendFile(__dirname + "/views/index.html");
+  // response.sendFile(__dirname + "/views/working.html");
+});
+
+
 app.get("/order", function(request, response) {
   response.sendFile(__dirname + "/views/order.html");
   // response.sendFile(__dirname + "/views/working.html");
