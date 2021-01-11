@@ -19,9 +19,8 @@ app.get("/", function (request, response) {
   // response.sendFile(__dirname + "/views/working.html");
 });
 
-app.get("/request", function (request, response) {
-  response.sendFile(__dirname + "/views/request.html");
-  // response.sendFile(__dirname + "/views/working.html");
+app.get("/order", function (request, response) {
+  response.sendFile(__dirname + "/views/order.html");
 });
 
 app.get("/ping", function (request, response) {
