@@ -6,7 +6,6 @@ const express = require("express");
 const app = express();
 const fs = require("fs");
 
-
 // we've started you off with Express,
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
@@ -14,26 +13,27 @@ const fs = require("fs");
 app.use(express.static("public"));
 
 // http://expressjs.com/en/starter/basic-routing.html
-app.get("/", function (request, response) {
+app.get("/", function(request, response) {
   response.sendFile(__dirname + "/views/index.html");
   // response.sendFile(__dirname + "/views/working.html");
 });
 
-app.get("/order", function (request, response) {
+app.get("/order", function(request, response) {
   response.sendFile(__dirname + "/views/order.html");
+  // response.sendFile(__dirname + "/views/working.html");
 });
 
-app.get("/ping", function (request, response) {
+app.get("/ping", function(request, response) {
   response.sendStatus(200);
 });
 
 //The 404 Route (ALWAYS Keep this as the last route)
-app.get("*", function (req, res) {
+app.get("*", function(req, res) {
   res.sendFile(__dirname + "/views/404.html");
 });
 
 // helper function that prevents html/css/script malice
-const cleanseString = function (string) {
+const cleanseString = function(string) {
   return string.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 };
 
