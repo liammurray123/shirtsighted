@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Nerko+One&family=Poppins&display=swap");
+/* font-family: 'Nerko One', cursive;
+font-family: 'Poppins', sans-serif; */
+:root {
+  --PastelPink: #da7ea5;
+  --Card-Shadow-Color: #ccc;
+  --background-color: white;
+}
+* {
+  /* box-sizing: border-box;
+  max-width: 100%; */
+  margin:0; padding:0; box-sizing:border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  padding: 2em;
+}
+
+section {
+  height: 100vh;
+}
+
+section#welcomeSection {
+  background-image: url(https://cdn.glitch.com/9812b47b-2677-423e-b8a0-8c2a3f671066%2Fflear.png?v=1607358633554);
+  background-position: left; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: fill; /* Resize the background image to fill the entire container */
+}
+
+#WelcomeText {
+  font-family: "Nerko One", cursive;
+  color: var(--PastelPink);
+  font-size: 4em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  font-family: "Nerko One", cursive;
+  color: black;
+  font-size: 3em;
+  text-align: center;
+  margin: 2vh;
+}
+
+/* Create two equal columns that floats next to each other */
+column {
+  float: left;
+  width: 33%;
+  text-align: left;
+}
+
+halfcolumn {
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+
+/* Clear floats after the columns */
+row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Item Cards */
+card {
+  height: auto;
+  width: auto;
+  min-width: 25%;
+  min-height: 25%;
+  margin: 1em;
+  border-radius: 16px;
+  background: var(--Background-Color);
+  box-shadow: 1rem 0 3rem var(--Card-Shadow-Color);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "Image Item-Details";
+
+}
+
+card:hover {
+  transition: 0.4s;
+  transform: translateY(-1em);
+}
+section#whyBuySection card {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "Image" "Item-Details";
+}
+
+section#whyBuySection card .Image {
+  border-radius: 16px;
+}
+section#whyBuySection card .Item-Details {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Item-Title"
+    "Item-Description";
+}
+.Image {
+  grid-area: Image;
+  border-radius: 16px 0px 0px 16px;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.Item-Details {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr 10%;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Item-Title"
+    "Item-Description"
+    "Buy-Section";
+  grid-area: Item-Details;
+}
+.Item-Title {
+  grid-area: Item-Title;
+}
+.Item-Description {
+  grid-area: Item-Description;
+}
+.Buy-Section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "Item-Price Buy-Button";
+  grid-area: Buy-Section;
+}
+.Item-Price {
+  grid-area: Item-Price;
+  color: #da7ea5;
+}
+.Buy-Button {
+  grid-area: Buy-Button;
+width: 100%;
+  padding: 5%;
+  
+  border-radius: 16px;
+  color: white;
+  background-color: var(--PastelPink);
+  border: none;
+  box-shadow: 1rem 0 3rem var(--Card-Shadow-Color);
+  font-family: "Poppins", sans-serif;
+}
+/* div.topSellerCard p.itemPrice {} */
+#back-to-top {
+  border: none;
+  font-size: 2em;
+  position: fixed;
+  padding: 1em;
+  bottom: 1vh;
+  right: 1vw;
+  /* transform: translate(-99vh, -99vw); */
+  border-radius: 50%;
+  /* padding: 1em; */
+  height: 1em;
+  width: 1em;
+  background-color: var(--PastelPink);
+  box-shadow: 1rem 0 3rem var(--Card-Shadow-Color);
+}
+
+#back-to-top i{
+  text-decoration: none;
+  color: white;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+}
+section#whyBuySection column img {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  column {
+    width: 100%;
+    align-self: center;
+  }
+  halfcolumn {
+    width: 100%;
+    align-self: center;
+  }
+  card {
+    grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "Image" 
+    "Item-Details";
+  }
+  card:hover {
+    transition: 0.4s;
+    transform: none;
+  }
+}
